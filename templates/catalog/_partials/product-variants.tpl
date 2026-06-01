@@ -13,12 +13,13 @@
         <fieldset class="product-variant">
           <div class="product-variant__label">
             <legend class="form-label product-variant__legend" id="{$legendId}">{$group.name}</legend>
-            <span class="selected-value product-variant__selected" aria-hidden="true">
-              {l s=': ' d='Shop.Theme.Catalog'}
-              {foreach from=$group.attributes key=id_attribute item=group_attribute}
-                {if $group_attribute.selected}{$group_attribute.name}{/if}
-              {/foreach}
-            </span>
+            {* @DS2026 *}
+{*            <span class="selected-value product-variant__selected" aria-hidden="true">*}
+{*              @DS:{$groupId}-{l s=': ' d='Shop.Theme.Catalog'}*}
+{*              {foreach from=$group.attributes key=id_attribute item=group_attribute}*}
+{*                {if $group_attribute.selected}{$group_attribute.name}{/if}*}
+{*              {/foreach}*}
+{*            </span>*}
           </div>
 
           {if $group.group_type == 'select'}
@@ -39,7 +40,7 @@
                 {assign var=labelId value="label_{$id_attribute_group}_{$id_attribute}_{$product.id}"}
 
                 <div class="product-variant__color input-color">
-                  <input 
+                  <input
                     class="input-color__input"
                     type="radio"
                     id="{$inputId}"

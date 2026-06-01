@@ -12,17 +12,18 @@
       {/if}
     </div>
 
-    <div class="products__sort">
-      {block name='sort_by'}
-        {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
-      {/block}
+{*    // @DS2026*}
+{*    <div class="products__sort">*}
+{*      {block name='sort_by'}*}
+{*        {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}*}
+{*      {/block}*}
 
-      {if !empty($listing.rendered_facets) && !isset($page.body_classes['layout-full-width'])}
-        <button id="search_filter_toggler" class="products__filter-button btn btn-outline-primary js-search-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-faceted">
-          <i class="material-icons" aria-hidden="true">&#xE152;</i>
-          {l s='Filter' d='Shop.Theme.Actions'}
-        </button>
-      {/if}
-    </div>
+{*      {if !empty($listing.rendered_facets) && !isset($page.body_classes['layout-full-width'])}*}
+{*        <button id="search_filter_toggler" class="products__filter-button btn btn-outline-primary js-search-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-faceted">*}
+{*          <i class="material-icons" aria-hidden="true">&#xE152;</i>*}
+{*          {l s='Filter' d='Shop.Theme.Actions'}*}
+{*        </button>*}
+{*      {/if}*}
+{*    </div>*}
   </div>
 </div>

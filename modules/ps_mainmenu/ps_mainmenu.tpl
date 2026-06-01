@@ -102,16 +102,17 @@
       {foreach from=$itemsFirstLevel item=menuItem}
         <li class="ps-mainmenu__tree-item type-{$menuItem.type} {if $menuItem.current} current{/if}" data-id="{$menuItem.page_identifier}" data-ps-ref="desktop-menu-item">
           <div class="ps-mainmenu__tree-item-wrapper">
-            <a
+            <span
               class="ps-mainmenu__tree-link"
-              href="{$menuItem.url}"
+{*            // @DS2026*}
+{*              href="{$menuItem.url}"*}
               data-depth="1"
               data-ps-ref="desktop-menu-link"
               {if $menuItem.current}aria-current="page"{/if}
               {if $menuItem.open_in_new_window}target="_blank" rel="noopener noreferrer"{/if}
             >
               {$menuItem.label}
-            </a>
+            </span>
             {if $menuItem.children|count}
               <button
                 class="ps-mainmenu__tree-dropdown-toggle dropdown-toggle"

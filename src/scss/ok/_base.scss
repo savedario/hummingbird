@@ -1,0 +1,25 @@
+.header-top-desktop {
+  background: black;
+  color: white;
+
+  .form-select, a:not(.dropdown-item):not(.ntn), #desktop_cart, .header-block__action-btn, .header-block__badge {
+    @extend .header-top-desktop;
+  }
+}
+
+
+a.btn-ok {
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background-color: black;
+  color: #fff !important;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    background-color: #9d639d !important;
+    color: #ffc !important;
+    text-decoration: none;
+  }
+}

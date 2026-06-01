@@ -263,7 +263,9 @@ $component-name: product;
   @include media-breakpoint-up(xl) {
     .#{$component-name} {
       &__container {
-        grid-template-columns: 55% minmax(0, 1fr);
+        //// @DS2026
+        //grid-template-columns: 55% minmax(0, 1fr);
+        grid-template-columns: 47% minmax(0, 1fr);
         gap: 2rem;
       }
 

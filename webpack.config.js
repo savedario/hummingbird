@@ -12,7 +12,8 @@ const { merge } = require('webpack-merge');
 const getConfig = ({mode, ...vars}) => {
   // Detect if we're using webpack serve (dev server) vs webpack watch
   const isDevServer = process.argv.includes('serve');
-  
+  const dev = process.env.NODE_ENV !== 'production';
+
   switch (mode) {
     case 'production':
       return merge(commonConfig({mode, ...vars}), productionConfig({mode, ...vars}));

@@ -104,6 +104,31 @@
           </form>
         {/block}
       </div>
+{*      // @DS2026 Copied from below*}
+      <div class="product__accordion accordion accordion-flush" id="product_accordion">
+        {block name='product_description'}
+          {if $product.description}
+            <div class="accordion-item" id="product_description">
+{*              <h2 class="accordion-header" id="product_description_heading">*}
+{*                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product_description_collapse" aria-expanded="true" aria-controls="product_description_collapse">*}
+{*                  {l s='Description' d='Shop.Theme.Catalog'}*}
+{*                </button>*}
+{*              </h2>*}
+
+              <div id="product_description_collapse" class="accordion-collapse collapse show" aria-labelledby="product_description_heading">
+                <div class="accordion-body">
+                  <div class="product__description rich-text">
+                    {$product.description nofilter}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {/if}
+        {/block}
+        {block name='product_details'}
+          {include file='catalog/_partials/product-details-ok.tpl'}
+        {/block}
+      </div>
     </div>
   </div>
   {* END OF FIRST PART *}
@@ -113,29 +138,30 @@
     <div class="product__bottom-left">
       {block name='product_tabs'}
         <div class="product__accordion accordion accordion-flush" id="product_accordion">
-          {block name='product_description'}
-            {if $product.description}
-              <div class="accordion-item" id="product_description">
-                <h2 class="accordion-header" id="product_description_heading">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product_description_collapse" aria-expanded="true" aria-controls="product_description_collapse">
-                    {l s='Description' d='Shop.Theme.Catalog'}
-                  </button>
-                </h2>
+{*          // @DS2026 Moved to right column*}
+{*          {block name='product_description'}*}
+{*            {if $product.description}*}
+{*              <div class="accordion-item" id="product_description">*}
+{*                <h2 class="accordion-header" id="product_description_heading">*}
+{*                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#product_description_collapse" aria-expanded="true" aria-controls="product_description_collapse">*}
+{*                    {l s='Description' d='Shop.Theme.Catalog'}*}
+{*                  </button>*}
+{*                </h2>*}
 
-                <div id="product_description_collapse" class="accordion-collapse collapse show" aria-labelledby="product_description_heading">
-                  <div class="accordion-body">
-                    <div class="product__description rich-text">
-                      {$product.description nofilter}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {/if}
-          {/block}
+{*                <div id="product_description_collapse" class="accordion-collapse collapse show" aria-labelledby="product_description_heading">*}
+{*                  <div class="accordion-body">*}
+{*                    <div class="product__description rich-text">*}
+{*                      {$product.description nofilter}*}
+{*                    </div>*}
+{*                  </div>*}
+{*                </div>*}
+{*              </div>*}
+{*            {/if}*}
+{*          {/block}*}
 
-          {block name='product_details'}
-            {include file='catalog/_partials/product-details.tpl'}
-          {/block}
+{*          {block name='product_details'}*}
+{*            {include file='catalog/_partials/product-details.tpl'}*}
+{*          {/block}*}
 
           {block name='product_attachments'}
             {if $product.attachments}

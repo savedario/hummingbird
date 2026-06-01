@@ -16,8 +16,9 @@
           {foreach from=$product.images item=image key=key name=productImages}
             <div class="carousel-item{if $image.id_image == $product.default_image.id_image} active{/if}">
               <picture>
+                {* @DS2026 Replaced all 720 with 600*}
                 {if isset($image.bySize.default_xl.sources.avif)}
-                  <source 
+                  <source
                     srcset="
                       {$image.bySize.default_xl.sources.avif} 400w,
                       {$image.bySize.product_main.sources.avif} 720w"
@@ -27,7 +28,7 @@
                 {/if}
 
                 {if isset($image.bySize.default_xl.sources.webp)}
-                  <source 
+                  <source
                     srcset="
                       {$image.bySize.default_xl.sources.webp} 400w,
                       {$image.bySize.product_main.sources.webp} 720w"
@@ -42,7 +43,7 @@
                     {$image.bySize.default_xl.url} 400w,
                     {$image.bySize.product_main.url} 720w"
                   sizes="(min-width: 992px) 50vw, (min-width: 360px) 33vw, 100vw"
-                  src="{$image.bySize.product_main.url}" 
+                  src="{$image.bySize.product_main.url}"
                   width="{$image.bySize.product_main.width}"
                   height="{$image.bySize.product_main.height}"
                   {if $smarty.foreach.productImages.first}
@@ -94,7 +95,7 @@
             >
               <picture>
                 {if isset($image.bySize.default_xs.sources.avif)}
-                  <source 
+                  <source
                     srcset="
                       {$image.bySize.default_xs.sources.avif},
                       {$image.bySize.default_xl.sources.avif} 2x"
@@ -103,7 +104,7 @@
                 {/if}
 
                 {if isset($image.bySize.default_xs.sources.webp)}
-                  <source 
+                  <source
                     srcset="
                       {$image.bySize.default_xs.sources.webp},
                       {$image.bySize.default_xl.sources.webp} 2x"
@@ -136,7 +137,7 @@
 
       <picture>
         {if isset($urls.no_picture_image.bySize.default_xl.sources.avif)}
-          <source 
+          <source
             srcset="
               {$urls.no_picture_image.bySize.default_xl.sources.avif} 400w,
               {$urls.no_picture_image.bySize.product_main.sources.avif} 720w"
@@ -146,7 +147,7 @@
         {/if}
 
         {if isset($urls.no_picture_image.bySize.default_xl.sources.webp)}
-          <source 
+          <source
             srcset="
               {$urls.no_picture_image.bySize.default_xl.sources.webp} 400w,
               {$urls.no_picture_image.bySize.product_main.sources.webp} 720w"
@@ -163,7 +164,7 @@
           sizes="(min-width: 992px) 50vw, (min-width: 360px) 33vw, 100vw"
           width="{$urls.no_picture_image.bySize.product_main.width}"
           height="{$urls.no_picture_image.bySize.product_main.height}"
-          src="{$urls.no_picture_image.bySize.default_xl.url}" 
+          src="{$urls.no_picture_image.bySize.default_xl.url}"
           loading="lazy"
           alt="{l s='No image available' d='Shop.Theme.Catalog'}"
           title="{l s='No image available' d='Shop.Theme.Catalog'}"

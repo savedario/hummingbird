@@ -13,6 +13,8 @@ $grid-breakpoints: (
 
 // Colors
 $blue: #0b69f6;
+// @DS2026
+$gray: #5e5d5d;
 $green: #188251;
 $red: #ff4657;
 $primary: $blue;
@@ -25,7 +27,8 @@ $caret-width: 1.375em;
 $caret-vertical-align: initial;
 
 // Border radius
-$border-radius: 0.5rem;
+//@DS $border-radius: 0.5rem;
+$border-radius: 0;
 
 // Links
 $link-decoration: none;

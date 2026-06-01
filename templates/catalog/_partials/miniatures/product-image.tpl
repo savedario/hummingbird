@@ -4,7 +4,8 @@
  *}
 {block name='product_miniature_image'}
   <div class="{$componentName}__image-container thumbnail-container">
-    <a href="{$product.url}" class="{$componentName}__image-link outline outline--rounded">
+    {* @DS removed class outline outline--rounded *}
+    <a href="{$product.url}" class="{$componentName}__image-link outline">
       {if $product.cover}
         <picture>
           {if isset($product.cover.bySize.default_md.sources.avif)}
@@ -45,6 +46,23 @@
             data-full-size-image-url="{$product.cover.bySize.home_default.url}"
           >
         </picture>
+{*        // @DS2026*}
+        <div class="thumbnail-overlay">
+          {block name='product_name'}
+            <div class="thumbnail-overlay-text">
+              <div class="{$componentName}__title">{$product.name}</div>
+  {*             Copied from code above*}
+              <div class="{$componentName}__price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">
+                    {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}
+                {if '' !== $smarty.capture.custom_price}
+                  {$smarty.capture.custom_price nofilter}
+                {else}
+                  {$product.price}
+                {/if}
+              </div>
+            </div>
+          {/block}
+        </div>
       {else}
         <picture>
           {if isset($urls.no_picture_image.bySize.default_md.sources.avif)}

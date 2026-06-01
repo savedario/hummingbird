@@ -17,103 +17,119 @@
 
           {include file='catalog/_partials/miniatures/product-image.tpl'}
 
-          {include file='catalog/_partials/miniatures/product-quickview.tpl'}
+{*          // @DS2026*}
+{*          {include file='catalog/_partials/miniatures/product-quickview.tpl'}*}
         </div>
       {/block}
+{*      <div class="thumbnail-overlay">*}
+{*        {block name='product_name'}*}
+{*          <div class="{$componentName}__title">{$product.name}</div>*}
+{*          *}{* Copied from code above *}
+{*          <div class="{$componentName}__price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">*}
+{*                {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}*}
+{*            {if '' !== $smarty.capture.custom_price}*}
+{*              {$smarty.capture.custom_price nofilter}*}
+{*            {else}*}
+{*              {$product.price}*}
+{*            {/if}*}
+{*              </div>*}
+{*        {/block}*}
+{*      </div>*}
 
-      {block name='product_miniature_bottom'}
-        <div class="{$componentName}__bottom">
-          <div class="{$componentName}__infos">
-            {block name='product_name'}
-              <a class="{$componentName}__title" href="{$product.url}" aria-label="{l s='View product %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Catalog'}">{$product.name}</a>
-            {/block}
+{*      // @DS2026*}
+{*      {block name='product_miniature_bottom'}*}
+{*        <div class="{$componentName}__bottom">*}
+{*          <div class="{$componentName}__infos">*}
+{*            {block name='product_name'}*}
+{*              <a class="{$componentName}__title" href="{$product.url}" aria-label="{l s='View product %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Catalog'}">{$product.name}</a>*}
+{*            {/block}*}
 
-            {block name='product_variants'}
-              {if $product.main_variants}
-                <div class="{$componentName}__variants">
-                  {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
-                </div>
-              {/if}
-            {/block}
+{*            {block name='product_variants'}*}
+{*              {if $product.main_variants}*}
+{*                <div class="{$componentName}__variants">*}
+{*                  {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}*}
+{*                </div>*}
+{*              {/if}*}
+{*            {/block}*}
 
-            {if $product.show_price}
-              <div class="{$componentName}__prices">
-                {block name='product_price'}
-                  {hook h='displayProductPriceBlock' product=$product type="before_price"}
+{*            {if $product.show_price}*}
+{*              <div class="{$componentName}__prices">*}
+{*                {block name='product_price'}*}
+{*                  {hook h='displayProductPriceBlock' product=$product type="before_price"}*}
 
-                  <div class="{$componentName}__price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">
-                    {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}
-                    {if '' !== $smarty.capture.custom_price}
-                      {$smarty.capture.custom_price nofilter}
-                    {else}
-                      {$product.price}
-                    {/if}
-                  </div>
+{*                  <div class="{$componentName}__price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">*}
+{*                    {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}*}
+{*                    {if '' !== $smarty.capture.custom_price}*}
+{*                      {$smarty.capture.custom_price nofilter}*}
+{*                    {else}*}
+{*                      {$product.price}*}
+{*                    {/if}*}
+{*                  </div>*}
 
-                  {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+{*                  {hook h='displayProductPriceBlock' product=$product type='unit_price'}*}
 
-                  {hook h='displayProductPriceBlock' product=$product type='weight'}
-                {/block}
+{*                  {hook h='displayProductPriceBlock' product=$product type='weight'}*}
+{*                {/block}*}
 
-                {block name='product_discount_price'}
-                  {if $product.show_price}
-                    <div class="{$componentName}__discount-price">
-                      {if $product.has_discount}
-                        {hook h='displayProductPriceBlock' product=$product type="old_price"}
+{*                {block name='product_discount_price'}*}
+{*                  {if $product.show_price}*}
+{*                    <div class="{$componentName}__discount-price">*}
+{*                      {if $product.has_discount}*}
+{*                        {hook h='displayProductPriceBlock' product=$product type="old_price"}*}
 
-                        <span class="{$componentName}__regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>
-                      {/if}
-                    </div>
-                  {/if}
-                {/block}
-              </div>
-            {/if}
+{*                        <span class="{$componentName}__regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}">{$product.regular_price}</span>*}
+{*                      {/if}*}
+{*                    </div>*}
+{*                  {/if}*}
+{*                {/block}*}
+{*              </div>*}
+{*            {/if}*}
 
-            {block name='product_reviews'}
-              {hook h='displayProductListReviews' product=$product}
-            {/block}
-          </div>
+{*            {block name='product_reviews'}*}
+{*              {hook h='displayProductListReviews' product=$product}*}
+{*            {/block}*}
+{*          </div>*}
 
-          {block name='product_actions'}
-            <div class="{$componentName}__actions">
-              {if $product.add_to_cart_url}
-                <form class="{$componentName}__form" action="{$urls.pages.cart}" method="post">
-                  <input type="hidden" value="{$product.id_product}" name="id_product">
-                  {if $product.id_product_attribute}
-                      <input type="hidden" value="{$product.id_product_attribute}" name="id_product_attribute">
-                  {/if}
-                  <input type="hidden" name="token" value="{$static_token}">
-  
-                  <div class="quantity-button js-quantity-button">
-                    {include file='components/qty-input.tpl'
-                      attributes=[
-                        "id" => "quantity_wanted_{$product.id_product}",
-                        "value" => "{$product.quantity_wanted}",
-                        "min" => "{$product.quantity_required}"
-                      ]
-                    }
-                  </div>
-  
-                  <button 
-                    data-button-action="add-to-cart" 
-                    class="product-miniature__add btn btn-primary btn-square-icon"
-                    aria-label="{l s='Add to cart %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Actions'}"
-                    title="{l s='Add to cart %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Actions'}"
-                    data-ps-ref="add-to-cart"
-                  >
-                    <i class="material-icons" aria-hidden="true">&#xe854;</i>
-                    <span class="product-miniature__add-text">{l s='Add to cart' d='Shop.Theme.Actions'}</span>
-                  </button>
-                </form>
-              {else}
-                <a href="{$product.url}" class="product-miniature__details btn btn-outline-primary" aria-label="{l s='View product %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Catalog'}">
-                  {l s='See details' d='Shop.Theme.Actions'}
-                </a>
-              {/if}
-            </div>
-          {/block}
-        </div>
-      {/block}
+{*          {block name='product_actions'}*}
+{*            <div class="{$componentName}__actions">*}
+{*              {if $product.add_to_cart_url}*}
+{*                <form class="{$componentName}__form" action="{$urls.pages.cart}" method="post">*}
+{*                  <input type="hidden" value="{$product.id_product}" name="id_product">*}
+{*                  {if $product.id_product_attribute}*}
+{*                      <input type="hidden" value="{$product.id_product_attribute}" name="id_product_attribute">*}
+{*                  {/if}*}
+{*                  <input type="hidden" name="token" value="{$static_token}">*}
+{*  *}
+{*                  <div class="quantity-button js-quantity-button">*}
+{*                    {include file='components/qty-input.tpl'*}
+{*                      attributes=[*}
+{*                        "id" => "quantity_wanted_{$product.id_product}",*}
+{*                        "value" => "{$product.quantity_wanted}",*}
+{*                        "min" => "{$product.quantity_required}"*}
+{*                      ]*}
+{*                    }*}
+{*                  </div>*}
+{*  *}
+{*                  <button *}
+{*                    data-button-action="add-to-cart" *}
+{*                    class="product-miniature__add btn btn-primary btn-square-icon"*}
+{*                    aria-label="{l s='Add to cart %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Actions'}"*}
+{*                    title="{l s='Add to cart %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Actions'}"*}
+{*                    data-ps-ref="add-to-cart"*}
+{*                  >*}
+{*                    <i class="material-icons" aria-hidden="true">&#xe854;</i>*}
+{*                    <span class="product-miniature__add-text">{l s='Add to cart' d='Shop.Theme.Actions'}</span>*}
+{*                  </button>*}
+{*                </form>*}
+{*              {else}*}
+{*                <a href="{$product.url}" class="product-miniature__details btn btn-outline-primary" aria-label="{l s='View product %product_name%' sprintf=['%product_name%' => $product.name] d='Shop.Theme.Catalog'}">*}
+{*                  {l s='See details' d='Shop.Theme.Actions'}*}
+{*                </a>*}
+{*              {/if}*}
+{*            </div>*}
+{*          {/block}*}
+{*        </div>*}
+{*      {/block}*}
     </div>
   </article>
 {/block}
