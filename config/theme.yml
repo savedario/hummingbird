@@ -8,8 +8,8 @@ author:
 
 meta:
   compatibility:
-    from: 9.1.0
-    to: ~9.1.0
+    from: 9.1.2
+    to: ~9.1.2
     framework: bootstrap-v5.3.3
 
   available_layouts:
