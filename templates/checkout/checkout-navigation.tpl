@@ -11,7 +11,7 @@
 {block name='checkout_steps'}
   <div class="{$componentName} {if isset($notifications) && isset($hasNotifications) && $hasNotifications} {$componentName}--has-notifications{/if}">
     <div class="{$componentName}__desktop">
-      <ul class="{$componentName}__list" role="tablist">nnn
+      <ul class="{$componentName}__list" role="tablist">
         {foreach from=$checkout_steps item="step" key="index"}
           {include file='checkout/_partials/checkout-navigation-step.tpl' number=($index + 1) step=$step.identifier title=$step.title}
         {/foreach}

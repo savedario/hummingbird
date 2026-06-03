@@ -41,11 +41,42 @@ global_settings:
     to_enable:
 #      - ps_linklist
 #      - okcustom2021
+#      - ps_socialfollow
+#      - psgdpr
 #    to_disable:
 #      - blockwishlist
 #      - ps_brandlist
 #      - ps_supplierlist
 #      - blockreassurance
+#      - psshipping
+#      - ps_featuredproducts
+#      - ps_facetedsearch
+#      - ps_banner
+#      - ps_currencyselector
+#      - ps_viewedproduct
+#      - productcomments
+#      - ps_sharebuttons
+#      - ps_featuredproducts
+#      - statsbestcategories
+#      - statsbestcustomers
+#      - statsbestmanufacturers
+#      - statsbestproducts
+#      - statsbestsuppliers
+#      - statsbestvouchers
+#      - statscarrier
+#      - statscatalog
+#      - statscheckup
+#      - statsdata
+#      - statsforecast
+#      - statsnewsletter
+#      - statspersonalinfos
+#      - statsproduct
+#      - statsregistrations
+#      - statssales
+#      - statssearch
+#      - statsstock
+#      - ps_banner
+#      - ps_banner
   hooks:
     modules_to_unhook:
 #      displayFooter:
@@ -63,7 +94,6 @@ global_settings:
         - ~
       displayNav2:
         - ps_languageselector
-        - ps_currencyselector
         - ps_customersignin
         - ps_shoppingcart
         # Keep existing hooks and append them after
