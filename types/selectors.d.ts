@@ -60,6 +60,11 @@ declare type searchBar = {
   searchIcon: string,
 };
 
+declare type emailSub = {
+  emailBlock: string,
+  emailInput: string,
+};
+
 declare type checkout = {
   steps: {
     item: string,
@@ -163,6 +168,7 @@ type SelectorsMap = {
   currencySelector: currencySelector,
   languageSelector: languageSelector,
   searchBar: searchBar,
+  emailSub: emailSub,
   mobileMenu: mobileMenu,
   visiblePassword: visiblePassword,
   desktopMenu: desktopMenu,

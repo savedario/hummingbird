@@ -2,9 +2,10 @@
  * For the full copyright and license information, please view the
  * LICENSE.md file that was distributed with this source code.
  *}
-<section class="ps-emailsubscription bg-body-tertiary py-3 py-lg-4" id="emailsubscription_anchor_{$hookName}">
+{*// @DS2026 moved py-3 py-lg-4 to row *}
+<section class="ps-emailsubscription bg-body-tertiary js-email-subscription" id="emailsubscription_anchor_{$hookName}">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center py-3 py-lg-4 collapse" id="ok_mailing">
       <p class="h3 col-lg-4">
         {l s='Get our latest news and special sales' d='Shop.Theme.Global'}
       </p>

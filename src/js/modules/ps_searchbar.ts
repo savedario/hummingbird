@@ -3,6 +3,7 @@
  * LICENSE.md file that was distributed with this source code.
  */
 
+import {Collapse} from 'bootstrap';
 import {searchProduct, Result} from '@services/search';
 import debounce from '@helpers/debounce';
 
@@ -27,6 +28,9 @@ const initSearchbar = () => {
   const searchIcon = document.querySelector<HTMLElement>(SearchBarMap.searchIcon);
   const searchClear = document.querySelector<HTMLElement>(SearchBarMap.searchClear);
   const searchUrl = searchWidget?.dataset.searchControllerUrl;
+  // const searchCollapse = Collapse.getInstance(SearchBarMap.searchCollapse);
+  const searchCollapse = document.querySelector<HTMLElement>(SearchBarMap.searchCollapse);
+  const okSearchBar = document.querySelector<HTMLElement>('#ok_searchbar');
 
   // Focus input on widget click (better touch UX)
   searchWidget?.addEventListener('click', () => {
@@ -228,12 +232,20 @@ const initSearchbar = () => {
         if (!searchWidgetHasFocus && searchDropdown && searchInput) {
           searchDropdown.classList.add('d-none');
           searchInput.setAttribute('aria-expanded', 'false');
+          if (searchCollapse) {
+            const elmCol = Collapse.getInstance(searchCollapse);
+            elmCol?.hide();
+          }
           currentResultIndex = -1;
         }
       }, 100);
     };
 
     searchInput.addEventListener('blur', handleBlur);
+    searchCollapse?.addEventListener('shown.bs.collapse', () => {
+      searchInput.focus();
+    });
+    okSearchBar?.addEventListener('blur', handleBlur);
 
     // Add focus/blur handlers to clear button to maintain search widget focus state
     searchClear?.addEventListener('focus', () => {

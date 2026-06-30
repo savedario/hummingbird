@@ -39,67 +39,61 @@ global_settings:
     PSR_TEXT_COLOR: "#212529"
   modules:
     to_enable:
-#      - ps_linklist
-#      - okcustom2021
-#      - ps_socialfollow
-#      - psgdpr
-#    to_disable:
-#      - blockwishlist
-#      - ps_brandlist
-#      - ps_supplierlist
-#      - blockreassurance
-#      - psshipping
-#      - ps_featuredproducts
-#      - ps_facetedsearch
-#      - ps_banner
-#      - ps_currencyselector
-#      - ps_viewedproduct
-#      - productcomments
-#      - ps_sharebuttons
-#      - ps_featuredproducts
-#      - statsbestcategories
-#      - statsbestcustomers
-#      - statsbestmanufacturers
-#      - statsbestproducts
-#      - statsbestsuppliers
-#      - statsbestvouchers
-#      - statscarrier
-#      - statscatalog
-#      - statscheckup
-#      - statsdata
-#      - statsforecast
-#      - statsnewsletter
-#      - statspersonalinfos
-#      - statsproduct
-#      - statsregistrations
-#      - statssales
-#      - statssearch
-#      - statsstock
-#      - ps_banner
-#      - ps_banner
+      - ps_linklist
+      - okcustom2021
+      - ps_categorytree
+      - ps_shoppingcart
+      - ps_socialfollow
+      - psgdpr
+    to_disable:
+      - blockreassurance
+      - blockwishlist
+      - productcomments
+      - ps_bestesellers
+      - ps_brandlist
+      - ps_categoryproduct
+      - ps_featuredproducts
+      - ps_facetedsearch
+      - ps_banner
+      - ps_currencyselector
+      - ps_viewedproduct
+      - ps_sharebuttons
+      - ps_specials
+      - ps_supplierlist
+      - psshipping
+      - statsbestcategories
+      - statsbestcustomers
+      - statsbestmanufacturers
+      - statsbestproducts
+      - statsbestsuppliers
+      - statsbestvouchers
+      - statscarrier
+      - statscatalog
+      - statscheckup
+      - statsdata
+      - statsforecast
+      - statsnewsletter
+      - statspersonalinfos
+      - statsproduct
+      - statsregistrations
+      - statssales
+      - statssearch
+      - statsstock
   hooks:
     modules_to_unhook:
 #      displayFooter:
 #        - ps_socialfollow
 #      displaySearch:
 #        - ps_searchbar
-    modules_to_hook:
-      displayAfterBodyOpeningTag:
-#        - blockreassurance
-        # Keep existing hooks and append them after
-        - ~
       displayNav1:
         - ps_contactinfo
-        # Keep existing hooks and append them after
-        - ~
+      displayFooter:
+        - ps_contactinfo
+    modules_to_hook:
       displayNav2:
         - ps_languageselector
         - ps_customersignin
         - ps_shoppingcart
-        # Keep existing hooks and append them after
-        - ~
-      displayNavFullWidth:
-        - blockreassurance
         # Keep existing hooks and append them after
         - ~
       displayTop:
@@ -107,21 +101,15 @@ global_settings:
         - ps_searchbar
         # Keep existing hooks and append them after
         - ~
-      displayHeader:
-        - okcustom2021
       displayHome:
         - ps_imageslider
         - ps_customtext
-        - ps_featuredproducts
-        - ps_banner
-        - ps_newproducts
-        - ps_bestsellers
+        - ps_categorytree
         # Keep existing hooks and append them after
         - ~
       displayFooterBefore:
         - ps_socialfollow
         - ps_emailsubscription
-        - blockreassurance
         # Keep existing hooks and append them after
         - ~
       displayFooter:
@@ -130,54 +118,8 @@ global_settings:
         - ps_contactinfo
         # Keep existing hooks and append them after
         - ~
-      displayFooterAfter:
-        - blockreassurance
-        # Keep existing hooks and append them after
-        - ~
-      displayLeftColumn:
-        - ps_categorytree
-        - ps_facetedsearch
-        # Keep existing hooks and append them after
-        - ~
-      displayContactLeftColumn:
-        - ps_contactinfo
-        # Keep existing hooks and append them after
-        - ~
-      displayContactRightColumn:
-        - ps_contactinfo
-        # Keep existing hooks and append them after
-        - ~
       displayContactContent:
         - contactform
-        # Keep existing hooks and append them after
-        - ~
-      displayProductAdditionalInfo:
-        - ps_sharebuttons
-        - productcomments
-        - ps_emailalerts
-        - ps_viewedproduct
-        # Keep existing hooks and append them after
-        - ~
-      displayProductListReviews:
-        - productcomments
-        # Keep existing hooks and append them after
-        - ~
-      displayFooterProduct:
-        - productcomments
-        - ps_categoryproducts
-        - ps_viewedproduct
-        # Keep existing hooks and append them after
-        - ~
-      displayCrossSellingShoppingCart:
-        - ps_featuredproducts
-        # Keep existing hooks and append them after
-        - ~
-      displayOrderConfirmation2:
-        - ps_featuredproducts
-        # Keep existing hooks and append them after
-        - ~
-      displayReassurance:
-        - blockreassurance
         # Keep existing hooks and append them after
         - ~
       displayCustomerAccount:

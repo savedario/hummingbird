@@ -13,6 +13,7 @@ import initCustomer from '@js/pages/customer';
 import initProductBehavior from '@js/product';
 import initMobileMenu from '@js/mobile-menu';
 import initSearchbar from '@js/modules/ps_searchbar';
+import initEmailSubHide from '@js/modules/ps_emailsubhide';
 import initEmailalerts from '@js/modules/ps_emailalerts';
 import initGdpr from '@js/modules/psgdpr';
 import initLanguageSelector from '@js/modules/ps_languageselector';
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCart();
   useQuantityInput();
   initSearchbar();
+  initEmailSubHide();
   initEmailalerts();
   initGdpr();
   initLanguageSelector();
@@ -98,6 +100,7 @@ export default {
   initCart,
   useQuantityInput,
   initSearchbar,
+  initEmailSubHide,
   initLanguageSelector,
   initCurrencySelector,
   initMobileMenu,

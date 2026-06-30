@@ -1,0 +1,7 @@
+.ok_searchbar .collapsing {
+    @include transition($transition-collapse-width);
+}
+
+.ok_searchbar .collapse .show {
+  background-color: red;
+}

@@ -23,3 +23,25 @@ a.btn-ok {
     text-decoration: none;
   }
 }
+
+.footer-block__title {
+  text-transform: uppercase;
+}
+
+/*
+  Uniform padding around text in slider
+ */
+.ps-imageslider {
+  .carousel-item {
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*
+  Remove left padding (we don't use the icon inside the input)
+ */
+.ps-searchbar__input {
+  padding-inline: 0.5em;
+}

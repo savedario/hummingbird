@@ -69,15 +69,21 @@ export const languageSelector = {
 };
 
 export const searchBar = {
-  searchCanvas: '.js-search-offcanvas',
-  searchWidget: '.js-search-widget',
-  searchDropdown: '.js-search-dropdown',
-  searchResults: '.js-search-results',
-  searchTemplate: '.js-search-template',
-  searchInput: '.js-search-input',
-  searchIcon: '.js-search-icon',
-  searchClear: '.js-search-clear',
+  searchCanvas: ".js-search-offcanvas",
+  searchWidget: ".js-search-widget",
+  searchDropdown: ".js-search-dropdown",
+  searchResults: ".js-search-results",
+  searchTemplate: ".js-search-template",
+  searchInput: ".js-search-input",
+  searchIcon: ".js-search-icon",
+  searchClear: ".js-search-clear",
   searchResultLink: '[data-ps-ref="searchbar-result-link"]',
+  searchCollapse: "#ok_searchinput",
+};
+
+export const emailSub = {
+  emailBlock: ".js-email-subscription",
+  emailInput: "#emailsubscription_input",
 };
 
 export const checkout = {
@@ -253,6 +259,7 @@ const selectorsMap = {
   currencySelector,
   languageSelector,
   searchBar,
+  emailSub,
   mobileMenu,
   guestPasswordToggle,
   visiblePassword,
