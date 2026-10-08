@@ -52,14 +52,16 @@
             <div class="thumbnail-overlay-text">
               <div class="{$componentName}__title">{$product.name}</div>
   {*             Copied from code above*}
-              <div class="{$componentName}__price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">
-                    {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}
-                {if '' !== $smarty.capture.custom_price}
-                  {$smarty.capture.custom_price nofilter}
-                {else}
-                  {$product.price}
-                {/if}
-              </div>
+              {if $product.show_price}
+                <div class="{$componentName}__price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">
+                      {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}
+                  {if '' !== $smarty.capture.custom_price}
+                    {$smarty.capture.custom_price nofilter}
+                  {else}
+                    {$product.price}
+                  {/if}
+                </div>
+              {/if}
             </div>
           {/block}
         </div>
