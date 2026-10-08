@@ -82,15 +82,16 @@
           {/if}
 
           {if !$configuration.is_catalog}
-            <a
-              href="{$urls.pages.order_slip}"
-              class="dropdown-item"
-              rel="nofollow"
-              {if $urls.current_url == $urls.pages.order_slip}aria-current="page"{/if}
-            >
-              <i class="material-icons me-2" aria-hidden="true">&#xE8B0;</i>
-              {l s='Credit slips' d='Shop.Theme.Customeraccount'}
-            </a>
+{*            // @DS2026 Feature not needed *}
+{*            <a*}
+{*              href="{$urls.pages.order_slip}"*}
+{*              class="dropdown-item"*}
+{*              rel="nofollow"*}
+{*              {if $urls.current_url == $urls.pages.order_slip}aria-current="page"{/if}*}
+{*            >*}
+{*              <i class="material-icons me-2" aria-hidden="true">&#xE8B0;</i>*}
+{*              {l s='Credit slips' d='Shop.Theme.Customeraccount'}*}
+{*            </a>*}
           {/if}
 
           {if $configuration.voucher_enabled && !$configuration.is_catalog}

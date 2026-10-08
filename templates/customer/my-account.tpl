@@ -41,10 +41,11 @@
     {/if}
 
     {if !$configuration.is_catalog}
-      <a class="{$componentName}__link" id="order_slips_main_link" href="{$urls.pages.order_slip}">
-        <i class="{$componentName}__icon material-icons" aria-hidden="true">&#xE8B0;</i>
-        {l s='Credit slips' d='Shop.Theme.Customeraccount'}
-      </a>
+{*      // @DS2026 Feature not needed *}
+{*      <a class="{$componentName}__link" id="order_slips_main_link" href="{$urls.pages.order_slip}">*}
+{*        <i class="{$componentName}__icon material-icons" aria-hidden="true">&#xE8B0;</i>*}
+{*        {l s='Credit slips' d='Shop.Theme.Customeraccount'}*}
+{*      </a>*}
     {/if}
 
     {if $configuration.voucher_enabled && !$configuration.is_catalog}

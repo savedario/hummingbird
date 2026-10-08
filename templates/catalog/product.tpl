@@ -126,7 +126,7 @@
           {/if}
         {/block}
         {block name='product_details'}
-          {include file='catalog/_partials/product-details-ok.tpl'}
+          {include file='catalog/_partials/product-details.tpl'}
         {/block}
       </div>
     </div>

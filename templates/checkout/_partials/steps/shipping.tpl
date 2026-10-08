@@ -59,10 +59,11 @@
         {/block}
 
         <div class="order-options">
-          <div id="delivery" class="mb-4">
-            <label for="delivery_message" class="form-label">{l s='Write a comment about this order' d='Shop.Theme.Checkout'}</label>
-            <textarea class="form-control" rows="2" cols="120" id="delivery_message" placeholder="{l s='Write your comment...' d='Shop.Theme.Checkout'}" name="delivery_message">{$delivery_message}</textarea>
-          </div>
+{*          // @DS2026 OK does not need this *}
+{*          <div id="delivery" class="mb-4">*}
+{*            <label for="delivery_message" class="form-label">{l s='Write a comment about this order' d='Shop.Theme.Checkout'}</label>*}
+{*            <textarea class="form-control" rows="2" cols="120" id="delivery_message" placeholder="{l s='Write your comment...' d='Shop.Theme.Checkout'}" name="delivery_message">{$delivery_message}</textarea>*}
+{*          </div>*}
 
           {if $recyclablePackAllowed}
             <div class="form-check" for="input_recyclable">

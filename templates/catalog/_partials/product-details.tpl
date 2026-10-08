@@ -7,42 +7,45 @@
   data-product="{$product.embedded_attributes|json_encode}"
 >
   <div class="accordion-item" id="product_details">
-    <h2 class="accordion-header" id="product_details_heading">
-      <button class="accordion-button {if $product.description}collapsed{/if}" type="button" data-bs-toggle="collapse" data-bs-target="#product_details_collapse" aria-expanded="{if !$product.description}true{else}false{/if}"
-        aria-controls="product_details_collapse">
-        {l s='Product Details' d='Shop.Theme.Catalog'}
-      </button>
-    </h2>
+{*    // @DS2026 OK does not use lots of details, so we shown them all uncollapsed *}
+{*    <h2 class="accordion-header" id="product_details_heading">*}
+{*      <button class="accordion-button {if $product.description}collapsed{/if}" type="button" data-bs-toggle="collapse" data-bs-target="#product_details_collapse" aria-expanded="{if !$product.description}true{else}false{/if}"*}
+{*        aria-controls="product_details_collapse">*}
+{*        {l s='Product Details' d='Shop.Theme.Catalog'}*}
+{*      </button>*}
+{*    </h2>*}
 
-    <div id="product_details_collapse" class="accordion-collapse collapse {if !$product.description}show{/if}" aria-labelledby="product_details_heading">
+{*    // @DS2026 does not collapse by default *}
+    <div id="product_details_collapse" class="accordion-collapse {if !$product.description}show{/if}" aria-labelledby="product_details_heading">
       <div class="accordion-body">
         <ul class="details__list">
-          {block name='product_manufacturer'}
-            {if isset($product_manufacturer->id)}
-              <li class="details__item details__item--manufacturer">
-                <div class="details__left">
-                  <span class="details__title">{l s='Brand' d='Shop.Theme.Catalog'}</span>
-                </div>
+{*          // @DS2026 We use manufacturer as country of origin, so it does not need to appear here *}
+{*          {block name='product_manufacturer'}*}
+{*            {if isset($product_manufacturer->id)}*}
+{*              <li class="details__item details__item--manufacturer">*}
+{*                <div class="details__left">*}
+{*                  <span class="details__title">{l s='Brand' d='Shop.Theme.Catalog'}</span>*}
+{*                </div>*}
 
-                <div class="details__right">
-                  {if isset($product_manufacturer.image.bySize.small_default.url)}
-                    <a href="{$product_manufacturer->url}">
-                      <img src="{$product_manufacturer.image.bySize.small_default.url}"
-                        class="img-fluid details__manufacturer-logo"
-                        alt="{$product_manufacturer->name}"
-                        loading="lazy"
-                        width="{$product_manufacturer.image.bySize.small_default.width}"
-                        height="{$product_manufacturer.image.bySize.small_default.height}"
-                        aria-label="{l s='Brand: %brand_name%' sprintf=['%brand_name%' => $product_manufacturer->name] d='Shop.Theme.Catalog'}"
-                      >
-                    </a>
-                  {else}
-                    <a href="{$product_manufacturer->url}">{$product_manufacturer->name}</a>
-                  {/if}
-                </div>
-              </li>
-            {/if}
-          {/block}
+{*                <div class="details__right">*}
+{*                  {if isset($product_manufacturer.image.bySize.small_default.url)}*}
+{*                    <a href="{$product_manufacturer->url}">*}
+{*                      <img src="{$product_manufacturer.image.bySize.small_default.url}"*}
+{*                        class="img-fluid details__manufacturer-logo"*}
+{*                        alt="{$product_manufacturer->name}"*}
+{*                        loading="lazy"*}
+{*                        width="{$product_manufacturer.image.bySize.small_default.width}"*}
+{*                        height="{$product_manufacturer.image.bySize.small_default.height}"*}
+{*                        aria-label="{l s='Brand: %brand_name%' sprintf=['%brand_name%' => $product_manufacturer->name] d='Shop.Theme.Catalog'}"*}
+{*                      >*}
+{*                    </a>*}
+{*                  {else}*}
+{*                    <a href="{$product_manufacturer->url}">{$product_manufacturer->name}</a>*}
+{*                  {/if}*}
+{*                </div>*}
+{*              </li>*}
+{*            {/if}*}
+{*          {/block}*}
 
           {block name='product_reference'}
             {if !empty($product.reference_to_display)}

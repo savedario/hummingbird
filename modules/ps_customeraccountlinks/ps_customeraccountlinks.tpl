@@ -60,11 +60,12 @@
         {/if}
 
         {if !$configuration.is_catalog}
-          <li>
-            <a href="{$urls.pages.order_slip}" rel="nofollow">
-              {l s='Credit slips' d='Shop.Theme.Customeraccount'}
-            </a>
-          </li>
+{*          // @DS2026 Feature not needed *}
+{*          <li>*}
+{*            <a href="{$urls.pages.order_slip}" rel="nofollow">*}
+{*              {l s='Credit slips' d='Shop.Theme.Customeraccount'}*}
+{*            </a>*}
+{*          </li>*}
         {/if}
 
         {if $configuration.voucher_enabled && !$configuration.is_catalog}
