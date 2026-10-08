@@ -35,11 +35,11 @@
     {if $depth === 1}
       <div class="js-sub-menu submenu" role="menu" aria-label="{l s='%s submenu' sprintf=[$parent.label] d='Shop.Theme.Menu'}" id="submenu-{$parent.page_identifier}" data-ps-ref="desktop-submenu">
         <div class="container">
-          <div class="submenu__row row gx-5">
+          <div class="submenu__row row ok_sub_cont">
     {/if}
 
     {if $depth === 1 }
-      <div class="submenu__left col-sm-3" role="tablist" aria-label="{l s='%s submenu tabs' sprintf=[$parent.label] d='Shop.Theme.Menu'}" data-ps-ref="desktop-submenu-left">
+      <div class="submenu__left col-sm-12" role="tablist" aria-label="{l s='%s submenu tabs' sprintf=[$parent.label] d='Shop.Theme.Menu'}" data-ps-ref="desktop-submenu-left">
         {foreach from=$nodes item=node}
           <a
             class="submenu__left-item"
@@ -63,23 +63,23 @@
       </div>
     {/if}
 
-    {if $depth === 1 }
-      <div class="submenu__right col-sm-9" data-ps-ref="desktop-submenu-right">
-        {foreach from=$nodes item=node}
-          <div
-            class="submenu__right-items"
-            role="tabpanel"
-            data-ps-ref="desktop-submenu-right-items"
-            {if $node.children|count}
-              id="submenu_{$node.label|lower|classname}_{$node.depth}_{$node.page_identifier}"
-              aria-labelledby="tab_{$node.label|lower|classname}_{$node.depth}_{$node.page_identifier}"
-            {/if}
-          >
-            {generateLinks links=$node.children parent=$parent}
-          </div>
-        {/foreach}
-      </div>
-    {/if}
+{*    {if $depth === 1 }*}
+{*      <div class="submenu__right col-sm-9" data-ps-ref="desktop-submenu-right">*}
+{*        {foreach from=$nodes item=node}*}
+{*          <div*}
+{*            class="submenu__right-items"*}
+{*            role="tabpanel"*}
+{*            data-ps-ref="desktop-submenu-right-items"*}
+{*            {if $node.children|count}*}
+{*              id="submenu_{$node.label|lower|classname}_{$node.depth}_{$node.page_identifier}"*}
+{*              aria-labelledby="tab_{$node.label|lower|classname}_{$node.depth}_{$node.page_identifier}"*}
+{*            {/if}*}
+{*          >*}
+{*            {generateLinks links=$node.children parent=$parent}*}
+{*          </div>*}
+{*        {/foreach}*}
+{*      </div>*}
+{*    {/if}*}
 
     {foreach from=$nodes item=node}
       {if $node.children|count}
@@ -102,17 +102,17 @@
       {foreach from=$itemsFirstLevel item=menuItem}
         <li class="ps-mainmenu__tree-item type-{$menuItem.type} {if $menuItem.current} current{/if}" data-id="{$menuItem.page_identifier}" data-ps-ref="desktop-menu-item">
           <div class="ps-mainmenu__tree-item-wrapper">
-            <span
+            <a
               class="ps-mainmenu__tree-link"
-{*            // @DS2026*}
-{*              href="{$menuItem.url}"*}
+{*            // @DS2026 No link to categories with children *}
+              {if !$menuItem.children|count}href="{$menuItem.url}"{/if}
               data-depth="1"
               data-ps-ref="desktop-menu-link"
               {if $menuItem.current}aria-current="page"{/if}
               {if $menuItem.open_in_new_window}target="_blank" rel="noopener noreferrer"{/if}
             >
               {$menuItem.label}
-            </span>
+            </a>
             {if $menuItem.children|count}
               <button
                 class="ps-mainmenu__tree-dropdown-toggle dropdown-toggle"

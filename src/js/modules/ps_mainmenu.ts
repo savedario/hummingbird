@@ -235,7 +235,8 @@ class SubMenuManager {
 
     if (!liElement) return;
 
-    const liPosition = liElement.offsetHeight + liElement.offsetTop;
+    // @DS2026 - Because li has now relative position
+    const liPosition = liElement.offsetHeight;// + liElement.offsetTop;
     subMenu.style.top = `${liPosition}px`;
   }
 

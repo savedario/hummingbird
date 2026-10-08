@@ -382,3 +382,15 @@ $component-name: ps-mainmenu;
     transform: translateX(0);
   }
 }
+
+/*
+  Make main menu dropdown slim
+ */
+.ps-mainmenu__tree-item.type-category {
+  position: relative;
+
+  .submenu {
+      left: 0;
+      width: 350px;
+  }
+}
