@@ -1,13 +1,15 @@
-.header-top-desktop {
-  background: black;
-  color: white;
+//.header-top-desktop {
+//  background: black;
+//  color: white;
+//
+//  .form-select, a:not(.dropdown-item):not(.ntn), #desktop_cart, .header-block__action-btn, .header-block__badge {
+//    @extend .header-top-desktop;
+//  }
+//}
 
-  .form-select, a:not(.dropdown-item):not(.ntn), #desktop_cart, .header-block__action-btn, .header-block__badge {
-    @extend .header-top-desktop;
-  }
-}
-
-
+/*
+  Wholesale button
+ */
 a.btn-ok {
   border-radius: 10px;
   font-size: 0.7rem;
@@ -27,6 +29,9 @@ a.btn-ok {
 .footer-block__title {
   text-transform: uppercase;
 }
+#footer_title_ok.footer-block__title {
+  text-transform: none;
+}
 
 /*
   Uniform padding around text in slider
@@ -44,4 +49,33 @@ a.btn-ok {
  */
 .ps-searchbar__input {
   padding-inline: 0.5em;
+}
+
+/*
+  CMS pages
+ */
+.page-content--cms {
+  //padding: 1.25rem;
+  text-align: justify;
+  background: $white;
+
+  .cms-box {
+    img {
+      //max-width: 100%;
+    }
+  }
+
+  ul {
+    @extend p;
+    list-style: disc inside none;
+  }
+
+  td {
+    img {
+      padding: 0.5rem;
+    }
+  }
+  td.cms-text {
+    width: 70%;
+  }
 }

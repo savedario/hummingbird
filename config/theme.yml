@@ -40,11 +40,12 @@ global_settings:
   modules:
     to_enable:
       - ps_linklist
-      - okcustom2021
+      - okcustom
       - ps_categorytree
       - ps_shoppingcart
       - ps_socialfollow
       - psgdpr
+      - layerslider
     to_disable:
       - blockreassurance
       - blockwishlist
@@ -104,6 +105,7 @@ global_settings:
       displayHome:
         - ps_imageslider
         - ps_customtext
+        - layerslider
         - ps_categorytree
         # Keep existing hooks and append them after
         - ~

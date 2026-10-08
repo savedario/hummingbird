@@ -5,6 +5,8 @@
 // Define CSS layers orders to allow easy customization
 @layer vendors, bs-base, bs-components, bs-custom-components, ps-base, ps-components, ps-pages, ps-modules, utilities, ok;
 
+$carousel-caption-width: 70%;
+
 /* stylelint-disable */
 @import "abstract";
 

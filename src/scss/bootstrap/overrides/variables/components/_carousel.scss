@@ -9,7 +9,8 @@ $carousel-indicator-opacity: 1;
 $carousel-indicator-active-opacity: 1;
 $carousel-indicator-transition: opacity 0.5s ease;
 
-$carousel-caption-width: 50%;
+// @DS2026 - was 50%
+$carousel-caption-width: 50% !default;
 
 $carousel-control-icon-width: 2.25rem;
 
