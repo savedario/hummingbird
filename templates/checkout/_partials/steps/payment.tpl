@@ -54,7 +54,7 @@
             {/if}
           </form>
 
-          {if $option.additionalInformation}
+          {if $option.additionalInformation|strip_tags|count_characters > 0}
             <div
               id="{$option.id}-additional-information"
               class="payment-option__additional-information js-additional-information"
@@ -63,7 +63,7 @@
               {$option.additionalInformation nofilter}
             </div>
           {/if}
-  
+
           <div
             id="pay-with-{$option.id}-form"
             class="js-payment-option-form"
